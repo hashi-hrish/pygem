@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <title>1Dride</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+        <style>
+            body {
+                font-family: 'Open Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f7f7f7;
+            }
+            
+            .header {
+                background-color: #3498db;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                position: relative;
+            }
+            
+            .car {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 80px;
+                height: 40px;
+                background-color: #f1c40f;
+                border-radius: 10px;
+                animation: move-car 5s infinite linear;
+            }
+            
+            .car .window {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 20px;
+                height: 15px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+
+            .car .window.right {
+                left: 50px;
+            }
+            
+            .car .tyre {
+                position: absolute;
+                bottom: -5px;
+                width: 15px;
+                height: 15px;
+                background-color: #333;
+                border-radius: 50%;
+            }
+            
+            .car .tyre.front {
+                left: 15px;
+            }
+            
+            .car .tyre.back {
+                left: 50px;
+            }
+            @keyframes move-car {
+                0% {
+                    left: 0;
+                    transform: rotateY(0deg);
+                }
+                50% {
+                    left: calc(100% - 80px);
+                    transform: rotateY(0deg);
+                }
+                51% {
+                    transform: rotateY(180deg);
+                }
+                100% {
+                    left: 0;
+                    transform: rotateY(180deg);
+                }
+            }
+            
+            .main-section {
+                padding: 50px;
+                text-align: center;
+            }
+            
+            .book-ride-form {
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin: 20px auto;
+                width: 300px;
+            }
+            
+            .book-ride-button {
+                background-color: #f1c40f;
+                color: #333;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 18px;
+            }
+            
+            .book-ride-button:hover {
+                background-color: #f7dc6f;
+            }
+            
+            .footer {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1></h1>
+            <div class="car">
+                <div class="window"></div>
+                <div class="window right"></div>
+                <div class="tyre front"></div>
+                <div class="tyre back"></div>
+            </div>
+        </div>
+        <div class="main-section">
+            <h2>Book a Ride</h2>
+            <form class="book-ride-form">
+                <label for="pickup-location">Pickup Location:</label>
+                <input type="text" id="pickup-location" name="pickup-location"><br><br>
+                <label for="drop-location">Drop Location:</label>
+                <input type="text" id="drop-location" name="drop-location"><br><br>
+                <button class="book-ride-button">Book Ride</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 1Dride</p>
+        </div>
+        
+        <script>
+            // Add event listener to book button
+            document.querySelector('.book-ride-button').addEventListener('click', (e) => {
+                e.preventDefault();
+                // Add booking logic here
+                alert('Ride booked successfully!');
+            });
+        </script>
+    </body>
+</body>
+</html>
