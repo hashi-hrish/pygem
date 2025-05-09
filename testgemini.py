@@ -1,10 +1,8 @@
 import google.generativeai as genai
-from dotenv import load_dotenv
+import os
 
-# Load environment variables from .env file
-load_dotenv()
-#Configure the API key
-api_key = os.environ['Google_API_key']
+ #Configure the API key
+api_key =os.environ.get("api_key")
 genai.configure(api_key=api_key)
 
 #Load the Gemini Pro model
@@ -33,7 +31,6 @@ def main():
         cont = input("Press Enter to continue or type 'exit' to stop: ")
         if cont.lower() == 'exit':
             break
-
 
         current_prompt = follow_up_question
 
